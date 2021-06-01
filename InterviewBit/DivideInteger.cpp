@@ -1,17 +1,25 @@
-int Solution::divide(int A, int B) {
-    if(A==INT_MIN&&B==-1)
-    return INT_MAX;
-    long long int a = A,b = B;
-    int sign = ((A<0)^(B<0)) ? -1:1;
-    a = abs(a);
-    b = abs(b);
+#include <iostream>
+#include <string>
+using namespace std;
+class A{
+	float d;
+   public:
+	virtual void func(){
+		cout<<"Hello this is class A\n";
+	}
+};
 
-int quotient = 0;
-while(a>=b)
+class B: public A{
+	int a = 15;
+public:
+	void func(){
+		cout<<"Hello this is class B\n";
+	}
+};
+
+int main(int argc, char const *argv[])
 {
-    a=a-b;
-    ++quotient;
-}
-
-return sign*quotient;
+	B b;
+	b.func();
+	return 0;
 }
